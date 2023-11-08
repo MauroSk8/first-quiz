@@ -44,6 +44,7 @@ public class Question6Test {
     assertEquals(drink.getName(), "ScottCola");
   }
 
+  @Test
   public void machineResets() throws Exception {
     VendingMachine vm = VendingMachineImpl.getInstance();
 
@@ -59,7 +60,6 @@ public class Question6Test {
     });
   }
 
-  @Test
   public void canGetKarenTeaForOneDollar() throws Exception {
     VendingMachine vm = VendingMachineImpl.getInstance();
 
@@ -67,7 +67,7 @@ public class Question6Test {
     vm.insertQuarter();
     vm.insertQuarter();
 
-    // Test that KarenTea costs more than 75 cents.
+    // Test that KarenTea costs at least than 75 cents.
     assertThrows(NotEnoughMoneyException.class, () -> {
       vm.pressButton("KarenTea");
     });

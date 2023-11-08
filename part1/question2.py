@@ -15,7 +15,12 @@
 # it. As always, there is a test suite that checks the result. It is in 
 # `question2_test.py.`
 
-swapper = None
+
+def swapper(tuple_to_swap):
+    # Make sure the tuple has exactly 2 elements before swapping
+    if len(tuple_to_swap) != 2:
+        return tuple_to_swap
+    return tuple_to_swap[::-1]
 
 def run_swapper(list_of_tuples):
-  return list(map(swapper, list_of_tuples))
+    return list(map(swapper, list_of_tuples))
